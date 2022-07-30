@@ -1,9 +1,6 @@
 import Head from "next/head";
 
-import { Main, ContentLinks } from "./styles";
-
-import PreviewLink from "../components/PreviewLink";
-
+import Preview from "../module/Preview";
 const Home = () => {
   return (
     <div>
@@ -13,16 +10,7 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Main>
-        <h1>Preview Link</h1>
-
-        <ContentLinks>
-          <PreviewLink name="Strip" link="https://stripe.com/" />
-          <PreviewLink name="NextJs" link="https://nextjs.org/" />
-          <PreviewLink name="ReactJs" link="https://reactjs.org/" />
-          <PreviewLink name="Flutter" link="https://flutter.dev/" />
-        </ContentLinks>
-      </Main>
+      <Preview />
     </div>
   );
 };
