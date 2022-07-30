@@ -1,5 +1,4 @@
-import { Link, ContentImage, Content, ContainerImage } from "./styles";
-import Image from "next/image";
+import { Link, ContentImage, Content, ContainerImage , Image} from "./styles";
 import React, { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import https from "https";
@@ -11,13 +10,13 @@ const PreviewLink = ({ link, name }: { link: string; name: string }) => {
   const [destroyImage, setDestroyImage] = useState(false);
 
   const onMouseEnter = async () => {
-    setDestroyImage(false);
+    setDestroyImage(true);
     setShowImage(true);
   };
   const onMouseLeave = () => {
     setShowImage(false);
     setTimeout(() => {
-      setDestroyImage(true);
+      setDestroyImage(false);
     }, 100);
   };
 
@@ -47,13 +46,12 @@ const PreviewLink = ({ link, name }: { link: string; name: string }) => {
   useEffect(() => {
     getImage();
   }, [link, getImage]);
-  if (loading) {
-    return null;
-  }
+ 
   return (
     <Content>
-      {!destroyImage && (
+      {destroyImage && image && (
         <ContainerImage>
+         
           <ContentImage showImage={showImage}>
             <Image
               title="link"

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ContentLinks = styled.section`
+export const ContentLinks = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
